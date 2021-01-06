@@ -2,7 +2,9 @@
 
 ## Requirements
 
-deno
+This project uses Deno
+
+https://deno.land/#installation
 
 ## CLI
 
