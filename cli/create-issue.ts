@@ -1,8 +1,6 @@
 import "https://deno.land/x/dotenv/load.ts";
 import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
 
-const apiBasePath = "https://api.github.com/repos/joglr/klbns/issues";
-
 const oauthToken = Deno.env.get("GITHUB_OAUTH_TOKEN");
 
 const myoctokit = Octokit.defaults({
@@ -10,12 +8,11 @@ const myoctokit = Octokit.defaults({
 });
 const octokit = new myoctokit();
 
+export const isReady = !!oauthToken;
+
 export async function createIssue(options: any) {
-  await octokit.request("POST /repos/joglr/klbns/issues", {
-    owner: "joglr",
-    repo: "klbns",
-    ...options,
-  });
+  const path = `POST /repos/${options.owner}/${options.repo}/issues`;
+  await octokit.request(path, options);
 }
 
 // console.log(oauthToken);

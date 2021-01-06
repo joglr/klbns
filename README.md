@@ -15,8 +15,10 @@ deno run --allow-net src/index.js <university>
 ```
 **Watch user ranking:**
 ```bash
-deno run --allow-net --allow-read --allow-env cli/watch.ts <univesityid> <userid>
+deno run --allow-net --allow-read --allow-env cli/watch.ts <univesityid> <userid> [refreshInterval] [github-repo] [github-user]
 ```
+
+
 
 ## Serverless functions
 
