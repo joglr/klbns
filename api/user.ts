@@ -1,5 +1,5 @@
 import { ServerRequest } from "https://deno.land/std@0.79.0/http/server.ts";
-import { getRankings } from "../src/get-rankings.ts";
+import { getUserRank } from "../src/get-user-rank.ts";
 
 export default async function (req: ServerRequest) {
   console.log(req.url);
@@ -15,9 +15,6 @@ export default async function (req: ServerRequest) {
     });
   }
 
-  const results = await getRankings(university);
-  const user = results.find(([_rank, user, _name]) => {
-    return user == queryUser;
-  });
+  const user = await getUserRank(university, queryUser);
   req.respond({ body: JSON.stringify(user) });
 }
