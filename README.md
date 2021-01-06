@@ -4,12 +4,23 @@
 
 deno
 
-## Usage
+## CLI
 
-deno run --allow-net index.js <university> <username>
+**Usage:**
 
-## Serverless function
+```bash
+deno run --allow-net src/index.js <university>
+```
 
-**Usage: **
+## Serverless functions
 
-`https://klbns.joglr.dev/api/?university=<university>`
+**Usage:**
+
+```http
+GET https://klbns.joglr.dev/api/?university=<universityid>
+```
+
+
+```http
+GET https://klbns.joglr.dev/api/user?university=<universityid>&user=<userid>
+```
