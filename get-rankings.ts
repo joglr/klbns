@@ -1,4 +1,4 @@
-export async function getRankings(university: string, username?: string) {
+export async function getRankings(university: string) {
   const basePath = "https://open.kattis.com/universities/";
   const path = basePath + university;
 
