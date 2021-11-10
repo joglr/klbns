@@ -8,6 +8,9 @@ export default async function (req: ServerRequest) {
   if (university === null) {
     return await req.respond({
       status: 400,
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         error: "The university parameter is required",
       }),
